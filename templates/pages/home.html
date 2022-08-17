@@ -27,17 +27,18 @@ blog:
 
 <div class="main full">
     {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
+        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count block_id="home-featured-products"}}
     {{/if}}
     {{{region name="home_below_featured_products"}}}
 
     {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
+        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count block_id="home-sellers-products"}}
     {{/if}}
     {{{region name="home_below_top_products"}}}
 
     {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
+        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count block_id="home-new-products"}}
+        
     {{/if}}
     {{{region name="home_below_new_products"}}}
 </div>

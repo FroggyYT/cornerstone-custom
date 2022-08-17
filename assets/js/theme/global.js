@@ -14,6 +14,9 @@ import privacyCookieNotification from './global/cookieNotification';
 import carousel from './common/carousel';
 import svgInjector from './global/svg-injector';
 
+import themevale_AddOption from './themevale/themevale_AddOptionForProduct';
+
+
 export default class Global extends PageManager {
     onReady() {
         const { cartId, secureBaseUrl } = this.context;
@@ -27,5 +30,34 @@ export default class Global extends PageManager {
         mobileMenuToggle();
         privacyCookieNotification();
         svgInjector();
+        
+        if ($('.card-variant').length) {
+            $('.card-variant').each((index, element) => {
+               var $prodWrapId = $(element).attr('id');
+               themevale_AddOption(this.context, $prodWrapId);
+             });
+
+            //  change img when click variant
+             function variantImageColor(){
+                $(document).on('click', '.card .card_optionImage .form-option', function(){
+                var self = $(this),
+                    newImageVariant = self.data('image'),
+                    productItemElm = self.closest('.card');
+        
+                    self.parents('.card_optionImage').find('.form-option').removeClass('active');
+                    self.addClass('active');
+                    
+                    if (newImageVariant != "undefined") {
+                        productItemElm.find('.card-img-container > img').attr({
+                            "srcset": newImageVariant,
+                            "src": newImageVariant
+                        });
+                        return false;
+                    }
+                });
+            }
+            variantImageColor();
+        }
+        
     }
 }

@@ -12,6 +12,7 @@ import { normalizeFormData } from './utils/api';
 import { isBrowserIE, convertIntoArray } from './utils/ie-helpers';
 import bannerUtils from './utils/banner-utils';
 import currencySelector from '../global/currency-selector';
+import additionalProductColors from '../themevale/additional_product_colors';
 
 export default class ProductDetails extends ProductDetailsBase {
     constructor($scope, context, productAttributesData = {}) {
@@ -76,6 +77,9 @@ export default class ProductDetails extends ProductDetailsBase {
             this.productOptionsChanged(event);
             this.setProductVariant();
         });
+
+        //call script
+        additionalProductColors(this.$scope, this.context, $productOptionsElement);
 
         $form.on('submit', event => {
             this.addToCartValidator.performCheck();

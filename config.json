@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Custom Backup",
+  "name": "Cornerstone Custom Update - 4 Addons 15082022",
   "version": "6.5.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -45,6 +45,9 @@
     "Firefox ESR"
   ],
   "settings": {
+    "variant_grouped": true,
+    "variant_name": "Color",
+    "themevale_color_variant": true,
     "hide_breadcrumbs": false,
     "hide_page_heading": false,
     "hide_category_page_heading": false,
@@ -393,6 +396,9 @@
       "images": {
       },
       "settings": {
+        "variant_grouped": true,
+        "variant_name": "Finish,Cap Style,Color",
+        "themevale_color_variant": true,
         "hide_breadcrumbs": false,
         "hide_page_heading": false,
         "hide_category_page_heading": false,
@@ -443,7 +449,7 @@
         "brand_size": "190x250",
         "gallery_size": "300x300",
         "productgallery_size": "500x659",
-        "product_size": "500x659",
+        "product_size": "640x640",
         "productview_thumb_size": "50x50",
         "productthumb_size": "100x100",
         "thumb_size": "100x100",
@@ -695,7 +701,7 @@
           "card",
           "paypal"
         ],
-        "lazyload_mode": "lazyload+lqip",
+        "lazyload_mode": "disabled",
         "checkout-paymentbuttons-paypal-color": "black",
         "checkout-paymentbuttons-paypal-shape": "rect",
         "checkout-paymentbuttons-paypal-size": "large",
@@ -721,6 +727,8 @@
         ]
       },
       "settings": {
+        "variant_grouped": true,
+        "variant_name": "Color",
         "homepage_featured_products_count": 6,
         "homepage_featured_products_column_count": 3,
         "body-font": "Google_Source+Sans+Pro_400",
@@ -933,6 +941,8 @@
         ]
       },
       "settings": {
+        "variant_grouped": true,
+        "variant_name": "Color",
         "body-font": "Google_Roboto_400",
         "headings-font": "Google_Volkhov_400",
         "color-textBase": "#74685c",

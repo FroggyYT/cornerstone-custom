@@ -1,0 +1,198 @@
+.productView {
+    .productView-images {
+        margin-bottom: 27px;
+        display: flex;
+        flex-direction: row-reverse;
+        position: relative;
+    
+        .productView-image {
+            min-width:  80%;
+            @media (max-width:400px) {
+                margin-left: 10px;
+            }
+        }
+    
+        .slick-track{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .productView-thumbnails {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+            .slick-list {
+                margin: 0;
+            }
+            .productView-thumbnail {
+                width: 100%;
+                margin-right: 4px;
+            }
+        .slick-prev.slick-arrow {
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg);
+            @media (min-width: 767px) {
+                top:20%;
+            }
+
+            @media (min-width: 800px) {
+               top: 0px;
+            }
+            @media (min-width: 990px) {
+                top:-20px;
+            }
+            @media (min-width: 1260px) {
+               top: -40px;
+            }
+        }
+
+        
+        .slick-next.slick-arrow {
+            top:100%;
+            left: 50%;
+            transform: translateX(-50%) rotate(90deg); 
+
+            @media (min-width: 550px) {
+                top:95%;
+            }
+            
+            @media (min-width: 767px) {
+                top:75%;
+            }
+            
+            @media (min-width: 800px) {
+                top:90%;
+            }
+
+            @media (min-width: 990px) {
+                top:95%;
+            }
+            @media (min-width: 1260px) {
+                top: calc(100% + 20px);
+            }
+        }
+    }
+
+    
+
+    #halo-fbt {
+        .slick-list.draggable {
+            max-width: 80%;
+            @media (max-width: 1025px){
+                max-width: 100%;
+            }
+            // overflow: auto;
+        
+            .slick-track {
+                margin-left: unset;
+            }
+        }
+        .themvale-fbt-detail-options {
+            .form-option{
+                span.form-option-variant {
+                    font-size: 0;
+                }
+            }
+        }
+
+        #themvale-fbt-addAll {
+            text-transform: uppercase;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 13px 20px;
+            background-color: #000;
+            border: none;
+
+            &:hover {
+                background-color: red;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.form-option{
+    border-radius: 50%;
+    margin-left: 4px;
+    span.form-option-variant {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        background-size: contain;
+    }
+}
+
+.form-radio:checked + .form-option{
+    border-radius: 50%;
+}
+
+.card_optionImage {
+    margin-top: 7px;
+    .form-option{
+        @media (max-width: 767px) {
+            margin-right: 4px;
+        
+        }
+        span.form-option-variant {
+            width: 20px;
+            height: 20px;
+            @media (max-width: 767px) {
+                width: 18px;
+                height: 18px;
+            }
+            @media (max-width: 360px) {
+                width: 15px;
+                height: 15px;
+            }
+
+            
+        }
+
+    }
+    .showmore {
+        display: inline-block;
+        transform: translateY(-26%);
+        text-decoration: none;
+
+        @media (max-width: 767px) {
+            transform: translateY(-20%);
+
+        }
+        @media (max-width: 360px) {
+            transform: translateY(-15%);
+
+        }
+    }
+}
+
+
+#halo-fbt{
+    .themvale-fbt-image-list{
+        .slick-arrow{
+            display: none;
+            // background-color: red !important;
+            &.slick-prev::before{
+                content: ' ';
+                position: absolute;
+                display: inline-block;
+                margin: auto;
+                width: 12px;
+                height: 12px;
+                right: -9px;
+                top: 0;
+                bottom: 0;
+                background-size: cover;
+                pointer-events: none;
+                z-index: 10;
+                background-image: url(../img/prev-button-fbt.svg) no-repeat;
+            }
+        }
+    }
+}

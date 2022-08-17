@@ -1,4 +1,4 @@
-<div class="form-field" data-product-attribute="set-rectangle" role="radiogroup" aria-labelledby="rectangle-group-label">
+<div class="form-field" data-product-attribute="set-rectangle" role="radiogroup" aria-labelledby="rectangle-group-label" data-option-title="{{this.display_name}}">
     <label class="form-label form-label--alternate form-label--inlineSmall" id="rectangle-group-label">
         {{this.display_name}}:
         <span data-option-value></span>
@@ -22,12 +22,13 @@
 
     {{#each this.values}}
     <div class="form-option-wrapper">    
-        <input
+        <input data-filter=".filter-{{camelcase this.label}}"
             class="form-radio"
             type="radio"
             id="attribute_rectangle__{{../id}}_{{id}}"
             name="attribute[{{../id}}]"
             value="{{id}}"
+            data-title="{{this.label}}"
             {{#if selected}}
                 checked
                 data-default

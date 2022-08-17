@@ -131,7 +131,7 @@ product_results:
             {{> components/search/content-listing}}
         </div>
 
-        <div role="tabpanel" id="product-listing-container" aria-labelledby="search-results-product-count" {{#if forms.search.section '!=' 'product'}}class="u-hidden"{{/if}}>
+        <div role="tabpanel" id="product-listing-container" aria-labelledby="search-results-product-count" class="card-variant{{#if forms.search.section '!=' 'product'}} u-hidden{{/if}}">
             {{> components/search/product-listing}}
         </div>
 

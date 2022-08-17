@@ -9,6 +9,11 @@
             <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
         </li>
     {{/if}}
+    <!-- Halo Start -->
+    <li class="tab specifications">
+        <a href="#tab-specification" class="tab-title">Specification</a>
+    </li>
+    <!-- Halo End -->
     {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
         <li class="tab">
             <a class="tab-title"
@@ -35,6 +40,12 @@
             {{{product.warranty}}}
         </div>
     {{/if}}
+    <!-- Halo Start -->
+    <div class="tab-content" id="tab-specifications">
+       
+        <!-- {{{region name="product_tab_specifications"}}} -->
+    </div>
+    <!-- Halo End -->
     {{#all product.custom_fields theme_settings.show_custom_fields_tabs}}
       <div class="tab-content" id="tab-{{dashcase (lowercase (sanitize theme_settings.pdp-custom-fields-tab-label))}}">
          <dl class="productView-info">

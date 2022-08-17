@@ -1,4 +1,4 @@
-<div class="form-field" data-product-attribute="set-radio" role="radiogroup" aria-labelledby="radio-group-label-{{id}}">
+<div class="form-field" data-product-attribute="set-radio" role="radiogroup" aria-labelledby="radio-group-label-{{id}}" data-option-title="{{this.display_name}}">
     <label class="form-label form-label--alternate form-label--inlineSmall" id="radio-group-label-{{id}}">
         {{ this.display_name }}:
 
@@ -18,12 +18,13 @@
     {{/unless}}
 
     {{#each this.values}}
-        <input
+        <input data-filter=".filter-{{camelcase this.label}}"
             class="form-radio"
             type="radio"
             id="attribute_radio_{{../id}}_{{id}}"
             name="attribute[{{../id}}]"
             value="{{id}}"
+            data-title="{{this.label}}"
             {{#if selected}}
                 checked
                 data-default

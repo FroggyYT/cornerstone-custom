@@ -129,6 +129,15 @@ export default class ProductDetailsBase {
                     .removeClass('is-active');
             }
         }
+
+        $('.specifications').click( function() {
+            $('.productView-description').find('.tab-content').removeClass('is-active');
+          
+                $('#tab-specifications').addClass('is-active');
+           
+            
+            
+        })
     }
 
     /**

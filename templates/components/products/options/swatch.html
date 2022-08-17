@@ -1,4 +1,4 @@
-<div class="form-field" data-product-attribute="swatch" role="radiogroup" aria-labelledby="swatchGroup_{{id}}">
+<div class="form-field" data-product-attribute="swatch" role="radiogroup" aria-labelledby="swatchGroup_{{id}}" data-option-title="{{this.display_name}}">
     <label class="form-label form-label--alternate form-label--inlineSmall" id="swatchGroup_{{id}}">
         {{this.display_name}}:
         <span data-option-value></span>
@@ -26,16 +26,19 @@
     {{/unless}}
 
     {{#each this.values}}
-    <div class="form-option-wrapper">
+    <div class="form-option-wrapper" data-title="{{this.label}}">
         <input class="form-radio"
+        data-filter=".filter-{{camelcase this.label}}"
                type="radio"
                name="attribute[{{../id}}]"
                value="{{id}}"
+               aria-label="{{this.label}}"               
                id="attribute_swatch_{{../id}}_{{id}}"
                {{#if selected}}checked data-default{{/if}}
                {{#if ../required}}required{{/if}}
-               aria-label="{{this.label}}"
         >
+        <!-- aria-label="{{this.label}}" -->
+
         <label class="form-option form-option-swatch" for="attribute_swatch_{{../id}}_{{id}}" data-product-attribute-value="{{id}}">
             {{#if image}}
                 <span class='form-option-variant form-option-variant--pattern' title="{{this.label}}" style="background-image: url('{{getImage image "swatch_option_size"}}');"></span>

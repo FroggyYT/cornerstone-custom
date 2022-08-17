@@ -9,6 +9,8 @@ import videoGallery from './product/video-gallery';
 import { classifyForm } from './common/utils/form-utils';
 import modalFactory from './global/modal';
 
+import FBT from './themevale/themevale_fbt';
+
 export default class Product extends PageManager {
     constructor(context) {
         super(context);
@@ -19,6 +21,12 @@ export default class Product extends PageManager {
     }
 
     onReady() {
+        // Halo start
+        $('.productView-description .custom-product-tab').appendTo('.productView-description #tab-specifications'); 
+        //     if($(".productView-description #tab-specifications").text().trim()==""){
+        //         $(".productView-description .tab.specifications").hide();
+        // }
+
         // Listen for foundation modal close events to sanitize URL after review.
         $(document).on('close.fndtn.reveal', () => {
             if (this.url.indexOf('#write_review') !== -1 && typeof window.history.replaceState === 'function') {
@@ -32,12 +40,12 @@ export default class Product extends PageManager {
         collapsibleFactory();
 
         this.productDetails = new ProductDetails($('.productView'), this.context, window.BCData.product_attributes);
-        this.productDetails.setProductVariant();
+        // this.productDetails.setProductVariant();
 
         videoGallery();
 
         this.bulkPricingHandler();
-
+        FBT(this.context);
         const $reviewForm = classifyForm('.writeReview-form');
 
         if ($reviewForm.length === 0) return;

@@ -2,6 +2,7 @@
     class="card
     {{#if alternate}} card--alternate{{/if}}"
     data-test="card-{{id}}"
+    data-product-id="{{id}}"
     {{#if settings.data_tag_enabled}}
         data-event-type="{{event}}"
         data-entity-id="{{id}}"
@@ -143,5 +144,11 @@
             {{/or}}
         </div>
         {{> components/products/bulk-discount-rates}}
+        {{#if theme_settings.themevale_color_variant}}
+            <div class="card_optionImage card_optionImage-{{id}} card-option-{{id}}">
+                <div class="form-field" data-product-attribute="swatch"></div>
+            </div>
+        {{/if}}
+
     </div>
 </article>

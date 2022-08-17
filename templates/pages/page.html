@@ -19,6 +19,8 @@
 
     {{{region name="page_builder_content"}}}
 
+    {{~inject 'token' settings.storefront_api.token}}
+
     <div class="page-content page-content--centered">
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}

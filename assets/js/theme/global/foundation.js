@@ -18,6 +18,7 @@ export default function ($element) {
         },
         tab: {
             active_class: 'is-active',
+            active_class: 'is-active',
         },
     });
 

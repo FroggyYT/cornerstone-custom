@@ -428,6 +428,12 @@
         "content": "i18n.Products"
       },
       {
+        "type": "checkbox",
+        "label": "Show Product Variants",
+        "force_reload": true,
+        "id": "themevale_color_variant"
+      },
+      {
         "type": "select",
         "id": "product_list_display_mode",
         "force_reload": true,
@@ -1365,6 +1371,22 @@
         "id": "color_hover_product_sold_out_badges",
         "reference": "product_sold_out_badges",
         "reference_default": "none"
+      },
+      {
+        "type": "heading",
+        "content": "Variant Image Grouped"
+      },
+      {
+        "type": "checkbox",
+        "label": "Variant Images Grouped",
+        "force_reload": true,
+        "id": "variant_grouped"
+      },
+      {
+        "type": "text",
+        "label": "Variant Name",
+        "force_reload": true,
+        "id": "variant_name"
       },
       {
         "type": "heading",
