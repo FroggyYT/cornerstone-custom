@@ -1,0 +1,188 @@
+// =============================================================================
+// BODY (CSS)
+//
+// 1. Header is fixed on small screens, use the content body to create the whitespace
+//    between it and the header on all situations. If you change the spacing here,
+//    please update .heroCarousel too.
+//
+// =============================================================================
+
+* {
+    font-family:Montserrat,Arial,Helvetica,sans-serif //!important; // DO NOT MAKE IMPORTANT
+}
+
+a {
+    color:#404040;
+    &:hover {
+        color:rgb(211, 17, 68);
+    }
+}
+
+.body {
+    margin-bottom: spacing("double") * 2;
+    margin-top: spacing("single"); // 1
+
+    @include breakpoint("medium") {
+        margin-top: spacing("single") + spacing("base"); // 1
+    }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height:10px;
+}
+
+::-webkit-scrollbar-track {
+  background:white;
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color:rgb(64, 64, 64);
+  transition:background-color 250ms;
+  border-radius:10px;
+  
+  &:hover {
+    background-color:rgb(211, 17, 68);  
+  }
+}
+
+
+#contextMenu {
+    background-color:white;
+    border-style:solid;
+    border-width:1px;
+    border-color:lightgray;
+    box-shadow: 5px 5px 5px gray;
+    //padding:10px;
+    opacity:0;
+    transform:scale(0);
+    transition:opacity 250ms, transform 250ms;
+    border-radius:10px;
+    
+    &.visible {
+        opacity:1;
+        transform:scale(1);
+    }
+    
+    & > ul {
+        list-style-type:none;
+        margin:0;
+        border-radius:10px;
+        
+        & > li {
+            user-select:none;
+            transition:background-color 250ms;
+            background-color:white;
+            padding:10px;
+            padding-right:30px;
+            padding-left:30px;
+            
+            &:first-child {
+                border-radius:10px 10px 0 0;
+            }
+            
+            &:last-child {
+                border-radius:0 0 10px 10px;
+            }
+            
+            &:hover {
+                cursor:pointer;
+                background-color:lightgray;
+                color:rgb(211, 17, 68);
+            }
+        }
+    }
+}
+
+.scroll-up {
+    width:10vmin;
+    height:10vmin;
+    padding:4px;
+    position:fixed;
+    // bottom:16px;
+    right:2vmin;
+    background-color:rgb(211, 17, 68);
+    border-style:solid;
+    border-color:lightgray;
+    border-width:1px;
+    
+    
+    color:white;
+    font-size:8vmin;
+    
+    top:100vh;
+    transform:translateY(-35vmin);
+    
+    
+    @include breakpoint("medium") {
+        width:6vmin;
+        height:6vmin;
+        font-size:5vmin;
+        transform:translateY(-8vmin);
+    }
+    
+    &.top {
+        top:0;
+        transform:translateY(2vmin);
+    }
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius:100%;
+    
+    user-select:none;
+    
+    z-index: 9999;
+    opacity:1;
+    
+    transition:opacity 250ms, background-color 150ms, top 500ms, transform 500ms;
+    
+    &:hover {
+        background-color:darken(rgb(211, 17, 68), 10%);
+        cursor:pointer;
+    }
+    
+    &.hidden {
+        opacity:0;
+    }
+}
+
+.page {
+    @include grid-row(
+        $behavior: nest
+    );
+}
+
+.page-content,
+.page-content--full {
+    @include grid-column(12);
+}
+
+.page-content--centered {
+
+    @include breakpoint("medium") {
+        @include grid-column(
+            $columns: 8,
+            $center: true
+        );
+    }
+}
+
+.page-content--textCenter {
+    text-align: center;
+}
+
+.page-sidebar {
+    @include grid-column(12);
+    position: relative;
+
+    @include breakpoint("medium") {
+        @include grid-column(3);
+
+        + .page-content {
+            @include grid-column(9);
+        }
+    }
+}
